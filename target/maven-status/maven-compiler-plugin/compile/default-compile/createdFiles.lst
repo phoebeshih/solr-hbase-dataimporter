@@ -1,0 +1,8 @@
+org/apache/solr/handler/dataimport/HBaseResultSet$1.class
+org/apache/solr/handler/dataimport/HBaseDataSource.class
+org/apache/solr/handler/dataimport/HBaseEntityProcessor.class
+org/apache/solr/handler/dataimport/DataImportException.class
+org/apache/solr/handler/dataimport/HBaseScanFactory.class
+org/apache/solr/handler/dataimport/HBaseResultSet.class
+org/apache/solr/handler/dataimport/DataType.class
+org/apache/solr/handler/dataimport/HBaseColumn.class
