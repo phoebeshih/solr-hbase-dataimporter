@@ -6,13 +6,18 @@
 
     <groupId>bebe.solr</groupId>
     <artifactId>solr-hbase-dataimporter</artifactId>
-    <version>5.5.3</version>
+    <version>5.5.4</version>
+
+    <properties>
+        <lucene.version>5.5.4</lucene.version>
+        <cdh.version>1.2.0-cdh5.9.0</cdh.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-dataimporthandler</artifactId>
-            <version>5.5.3</version>
+            <version>${lucene.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -27,12 +32,23 @@
         <dependency>
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-client</artifactId>
-            <version>1.2.0-cdh5.9.0</version>
+            <version>${cdh.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-common</artifactId>
-            <version>1.2.0-cdh5.9.0</version>
+            <version>${cdh.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.9.5</version>
         </dependency>
     </dependencies>
 
@@ -45,6 +61,10 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.1</version>
                     <inherited>true</inherited>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
                 </plugin>
                 <!-- maven-dependency-plugin -->
                 <plugin>
