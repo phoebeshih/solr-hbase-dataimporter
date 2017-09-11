@@ -17,7 +17,8 @@
             zookeeper="localhost"/>
       <document>
         <entity name="hbase" dataSource="HBase" processor="HBaseEntityProcessor" 
-          table ="Test" columns="f1:cq1,f1:cq2" required="f1:cq1,f1:cq2">
+          table ="Test" columns="f1:cq1,f1:cq2" required="f1:cq1,f1:cq2"
+	  startTime="${dataimporter.last_index_time}">
           <field column="rowkey" name="id" />
           <field column="cq1" name="columnQualifier1" />
           <field column="cq2" name="columnQualifier2" />
