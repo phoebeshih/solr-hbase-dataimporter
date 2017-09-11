@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Created by phoebe.shih on 2017/5/13.
  */
-public class HBaseEntityProcessor extends SqlEntityProcessor{
+public class HBaseEntityProcessor extends EntityProcessorBase{
 
     protected DataSource<Iterator<Map<String, Object>>> dataSource;
 
@@ -25,7 +25,12 @@ public class HBaseEntityProcessor extends SqlEntityProcessor{
     }
 
     @Override
-    public void destroy(){
+    public Map<String, Object> nextModifiedRowKey() {
+        return nextRow();
+    }
+
+    @Override
+    public void close(){
         dataSource.close();
     }
 }
